@@ -7,6 +7,7 @@ https://docs.djangoproject.com/en/dev/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
+import os
 from django.core.urlresolvers import reverse_lazy
 from os.path import dirname, join, exists
 
@@ -53,6 +54,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trigger',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -113,3 +115,23 @@ LOGIN_REDIRECT_URL = reverse_lazy("profiles:show_self")
 LOGIN_URL = reverse_lazy("accounts:login")
 
 THUMBNAIL_EXTENSION = 'png'     # Or any extn for your thumbnails
+
+CONFIGURED_IP = os.environ['CONF_IP']
+
+# Django rq configs 
+RQ_SHOW_ADMIN_LINK = True
+RQ_QUEUES = {
+    'default': {
+        'HOST': CONFIGURED_IP, 
+        'PORT': 6379,
+        'DB': 0,
+        'DEFAULT_TIMEOUT': 360,
+    },
+}
+
+# centrifuge configuration
+CENTRIFUGE_WEBSOCKET = 'ws://%s:8080/connection/websocket' % CONFIGURED_IP
+CENTRIFUGE_ADDRESS = 'http://%s:8080' % CONFIGURED_IP
+CENTRIFUGE_PROJECT_ID = 'fe89320dbe434f5390903c97a2d4b0cf'
+CENTRIFUGE_PROJECT_SECRET = '8df8a4d978754ace88067def50afe5ed'
+CENTRIFUGE_TIMEOUT = 10
