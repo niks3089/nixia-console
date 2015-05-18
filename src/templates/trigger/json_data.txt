@@ -1,0 +1,31 @@
+{
+
+    "header" : {
+        "protocol" : "http"
+    },
+    "connection summary" : {
+        "Total Running connections" : "4294967203",
+        "Total completed connections" : "100",
+        "Total successful connects" : "7",
+        "Total failed connects" : "0"
+    },
+    "request summary" : {
+        "Total requests sent" : "7",
+        "Total responses received" : "7",
+        "Total errors" : "0",
+        "Total 1xx responses" : "0",
+        "Total 2xx responses" : "7",
+        "Total 3xx responses" : "0",
+        "Total 4xx responses" : "0",
+        "Total 5xx responses" : "0"
+    },
+    "transfer summary" : {
+        "Total run time" : "6950",
+        "Total uploaded bytes" : "0",
+        "Total downloaded bytes" : "0",
+        "Average transfer time" : "0.115776",
+        "Average requests sent in a second" : "1.369408",
+        "Average requests received in a second" : "1.369408",
+        "95 percentile of Total transfer time" : "1"
+    }
+}
