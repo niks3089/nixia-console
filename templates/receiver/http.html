@@ -1,0 +1,23 @@
+{% load crispy_forms_tags %}
+{% load staticfiles %} 
+<head>
+<link href="{{STATIC_URL}}bootstrap-3.3.4-dist/css/bootstrap.css"
+      rel="stylesheet" media="screen"></link>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}receiver/style.css" />
+<style>
+body {
+ margin: 30px;
+
+}
+</style>
+</head>
+
+<script src="{{STATIC_URL}}bootstrap-3.3.4-dist/js/jquery-1.11.2.js"></script>
+<body>
+{% include "receiver/nav.html" %}
+<script src="{{STATIC_URL}}bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+<script src="{{STATIC_URL}}bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+</body>  
+{% block content %}
+{% crispy http_form %}
+{% endblock %} 

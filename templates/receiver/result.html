@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<script src="{{STATIC_URL}}bootstrap-3.3.4-dist/js/jquery-1.11.2.js"></script>
+<script src="{{STATIC_URL}}js/centrifuge.js"></script>
+<script src="{{STATIC_URL}}js/centrifuge.dom.js"></script>
+
+<html lang="en">
+<head>
+<script type="text/javascript" src="{{STATIC_URL}}js/result.js"></script>
+
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% include "receiver/nav_result.html"%}
+
+<link href="{{STATIC_URL}}bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" media="screen"></link>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}receiver/style.css" />
+<style>
+
+body 
+{
+     margin: 30px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="container">
+    <h1 class="text-info">Test Results:</h1>
+    <h2> </h2>
+<script src="{{STATIC_URL}}bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="tabs">
+        <li><a href="#HTTP" data-toggle="tab">HTTP</a></li>
+        <li><a href="#summary" data-toggle="tab">Summary</a></li>
+    </ul>
+    <!-- Tabs -->
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      
+        <!-- Repo -->
+        <div class="tab-pane active" id="HTTP">
+            
+          <h2>HTTP</h2>
+          
+                <!-- Repo Tabs --->
+                <ul class="nav nav-tabs" id="repoTabs">
+                    <li><a href="#connection" data-toggle="tab">Connection Summary</a></li>
+                    <li><a href="#request" data-toggle="tab">Request Summary</a></li>
+            <li><a href="#transfer" data-toggle="tab">Transfer Summary</a></li>
+                </ul>
+              
+                <!-- Repo Tabs -->
+              
+              <div class="tab-content">
+                <div class="tab-pane active" id="connection">
+             <h2>Connection Summary:</h2>    
+    
+            <div class="form-group">
+
+                <label for="Total Running connections">Total Running connections:</label>
+                  <input type="text" class="form-control" id="Total Running connections" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total completed connections">Total completed connections:</label>
+                  <input type="text" class="form-control" id="Total completed connections" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total successful connects">Total successful connects:</label>
+                  <input type="text" class="form-control" id="Total successful connects" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total failed connects">Total failed connects:</label>
+                  <input type="text" class="form-control" id="Total failed connects" readonly> </input>
+            </div>
+
+        </div>
+              <div class="tab-pane" id="request">
+            <h2>Request Summary:</h2>
+
+            <div class="form-group">
+
+                <label for="Total requests sent">Total requests sent:</label>
+                 <input type="text" class="form-control" id="Total requests sent" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total responses received">Total responses received:</label>
+                  <input type="text" class="form-control" id="Total responses received" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total errors">Total errors:</label>
+                  <input type="text" class="form-control" id="Total errors" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total 1xx responses">Total 1xx responses:</label>
+                  <input type="text" class="form-control" id="Total 1xx responses" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total 2xx responses">Total 2xx responses:</label>
+                  <input type="text" class="form-control" id="Total 2xx responses" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total 3xx responses">Total 3xx responses:</label>
+                  <input type="text" class="form-control" id="Total 3xx responses" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total 4xx responses">Total 4xx responses:</label>
+                  <input type="text" class="form-control" id="Total 4xx responses" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total 5xx responses">Total 5xx responses:</label>
+                  <input type="text" class="form-control" id="Total 5xx responses" readonly> </input>
+            </div>
+        </div>
+              <div class="tab-pane" id="transfer">
+              <h2>Transfer Summary:</h2>
+            <div class="form-group">
+
+                <label for="Total run time">Total run time:</label>
+                  <input type="text" class="form-control" id="Total run time" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total uploaded bytes">Total uploaded bytes:</label>
+                  <input type="text" class="form-control" id="Total uploaded bytes" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Total downloaded bytes">Total downloaded bytes:</label>
+                  <input type="text" class="form-control" id="Total downloaded bytes" readonly> </input>
+            </div>
+            <div class="form-group">
+                  <label for="Average transfer time">Average transfer time:</label>
+                  <input type="text" class="form-control" id="Average transfer time" readonly> </input>
+            </div>
+            <div class="form-group">
+                <label for="Average requests sent in a second">Average requests sent in a second:</label>
+                  <input type="text" class="form-control" id="Average requests sent in a second" readonly> </input>
+            </div>
+            <div class="form-group">
+                <label for="Average requests received in a second">Average requests received in a second:</label>
+                  <input type="text" class="form-control" id="Average requests received in a second"     readonly> </input>
+            </div>
+            <div class="form-group">
+                <label for="95 percentile of Total transfer time">95 percentile of Total transfer time:</label>
+                  <input type="text" class="form-control" id="95 percentile of Total transfer time" readonly> </input>
+            </div>
+        </div>          
+        
+            </div>
+          
+        </div>
+          <div class="tab-pane" id="summary">
+        <h2>Summary:</h2>         
+        <div class="form-group">
+              <label for="mytextarea">About the test you just conducted:</label>
+              <textarea class="form-control" rows="5" id="mytextarea" readonly></textarea>
+        </div>
+        </div>
+    </div>
+    <div class="form-group">
+    <p>
+        <button type="button" class="btn btn-primary">Save test</button>
+        <button type="button" class="btn btn-danger">Stop test!</button>
+    </p>
+    </div>
+</div>
+
+<script type="text/javascript">
+function f1()
+{
+        var centrifuge = new Centrifuge();
+        centrifuge.configure({
+            url: "{{ CENTRIFUGE_WEBSOCKET }}",
+            project: "{{ CENTRIFUGE_PROJECT_ID }}",
+            user: "",
+            timestamp: "1",
+            token: "1",
+            debug: true
+        })
+        centrifuge.connect();
+        centrifuge.on('connect', function() {
+        // now your client connected
+        var subscription = centrifuge.subscribe("{{ data_channel }}", function(message) {
+            // called when message received from this channel
+            console.log("received centrifuge data " + message.data)
+            var value;
+            var items = [];
+            message.data = JSON.parse(message.data);
+            if("header" in message.data)
+            {
+                $.each(message.data["header"], function(entryIndex, entry) {
+                value = entry;});
+                if(value=="http")
+                {
+                    $.each(message.data["connection summary"], function(entryIndex, entry) {
+                    var val = entry;
+                    items.push( "<id='" + entryIndex + "'>" + val + "" );
+                    document.getElementById(entryIndex).value = val;  
+                        });
+                         
+                  $.each(message.data["request summary"], function(entryIndex, entry) {
+                    var val = entry;
+                    items.push( "<id='" + entryIndex + "'>" + val + "" );
+                    document.getElementById(entryIndex).value = val;  
+                        });
+                         
+                  $.each(message.data["transfer summary"], function(entryIndex, entry) {
+                    var val = entry;
+                    items.push( "<id='" + entryIndex + "'>" + val + "" );
+                    document.getElementById(entryIndex).value = val;  
+                        });
+                }
+                else
+                {
+                    alert("Error! Not http protocol!");
+                }
+            }
+            else if("error" in message.data)
+            {
+                $.each(message.data["error"], function(entryIndex, entry) {
+                    value = entry;});
+                alert(value)
+            }
+            else if ("notification" in message.data)
+            {
+                $.each(message.data["notification"], function(entryIndex, entry) {
+                    value = entry;});
+                alert(value)
+            }
+            else 
+            {
+                alert("No header specified");
+            }
+            $( "</>", {}).appendTo( "body" );
+        });
+    });
+}
+</script>
+<script>
+f1();
+</script>
+</body>
+</html>

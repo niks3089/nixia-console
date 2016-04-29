@@ -1,0 +1,48 @@
+<html>
+<h1 style="color:blue;"> <b>                                         WELCOME TO ANTIK </b></h1>
+
+<!--{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}-->
+{% load crispy_forms_tags %}
+{% load staticfiles %} 
+
+<head>
+<!--<link rel="stylesheet" type="text/css" href="{% static 'receiver/style.css' %}" />-->
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}receiver/style.css" />
+<link href="{{STATIC_URL}}bootstrap-3.3.4-dist/css/bootstrap.min.css"
+      rel="stylesheet" media="screen">
+<style>
+body {
+margin: 30px;
+}
+ html { 
+    
+color:blue;
+ 
+
+
+}
+</style>
+</head>
+<body>
+<script src="{{STATIC_URL}}bootstrap-3.3.4-dist/js/jquery-1.11.2.js"></script>
+<!--<script src={% bootstrap_javascript_url %}></script>-->
+<!--<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap-tab.js"></script>
+ -->
+<script src="{{STATIC_URL}}bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+
+<script src="{{STATIC_URL}}bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+{% if invalid_user == True %}
+	<script>
+    		alert("User credentials entered seem to be wrong ! TRY AGAIN");
+	</script>
+{% endif %}
+</body>  
+{% block content %}
+{% crispy welcome_form %}
+{% endblock %} 
+</html>
+
+
+
