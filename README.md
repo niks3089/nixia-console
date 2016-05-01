@@ -1,8 +1,8 @@
 
 
-# nixia_front_end
+# nixia console
 
-nixia_front_end is a (short description) built with [Python][0] using the [Django Web Framework][1].
+nixia console is a (short description) built with [Python][0] using the [Django Web Framework][1].
 
 This project has the following basic apps:
 
@@ -10,7 +10,8 @@ This project has the following basic apps:
 * App2 (short desc)
 * App3 (short desc)
 
-## Installation
+## Design
+![My Diagram Image](nixia-console-design.png)
 
 ### Quick start
 
