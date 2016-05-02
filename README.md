@@ -2,41 +2,27 @@
 
 # nixia console
 
-nixia console is a (short description) built with [Python][0] using the [Django Web Framework][1].
+nixia console is a web console built with [Python][0] using the [Django Web Framework][1]. The purpose of this is to run [nixia](https://github.com/niks3089/nixia/) testing tool on any remote machines and be able to view the test results on your browser
 
-This project has the following basic apps:
+This project has the following components:
 
-* App1 (short desc)
-* App2 (short desc)
-* App3 (short desc)
+* Redis server
+* Centrifuge
+* Webserver
 
 ## Design
+Please download and view the image
+
 ![My Diagram Image](nixia-console-design.png)
 
-### Quick start
+### Installation
 
-To set up a development environment quickly, first install Python 3.4. It
-comes with virtualenv built-in. So create a virtual env by:
+Enter your virtual enviornment
 
-    1. `$ python3.4 -m venv nixia_front_end`
-    2. `$ . nixia_front_end/bin/activate`
+Install all dependencies:
 
-> Sometimes, binaries like pip get installed inside `local/bin/`. So append
-> this line to `nixia_front_end/bin/activate`:
->
-> `PATH="$VIRTUAL_ENV/local/bin:$PATH"`
+    pip install -r requirements.txt
 
-Now the pip commands should work smoothly. Install all dependencies:
-
-    pip install -r dev-requirements.txt
-
-Run migrations:
-
-    python manage.py migrate
 
 ### Detailed instructions
 
-Take a look at the docs for a detailed instructions guide.
-
-[0]: https://www.python.org/
-[1]: https://www.djangoproject.com/
