@@ -17,6 +17,7 @@ Please download and view the image
 
 ### Installation
 
+Install tcl
 Install [redis] (http://redis.io/):
 
 Set up virtual enviornment
@@ -37,6 +38,7 @@ Run the server
     ./scripts/start_service.sh <server ip>
     
 Stop the server
+
     ./scripts/stop_service.sh
 
 
